@@ -13,7 +13,7 @@ export default class LatestPhotos extends Component {
   componentDidMount() {
     axios
       .get(
-        "https://api.unsplash.com/photos/?client_id=R6TMlKwXQK-EvFlH2bl3KQqrC3_H57YZmJq8XzyrAsY&per_page=16&page=" +
+        "https://api.unsplash.com/photos/?client_id=R6TMlKwXQK-EvFlH2bl3KQqrC3_H57YZmJq8XzyrAsY&per_page=8&page=" +
           this.state.page
       )
       .then((res) =>
@@ -29,7 +29,7 @@ export default class LatestPhotos extends Component {
   loadNextPage = (e) => {
     axios
       .get(
-        "https://api.unsplash.com/photos/?client_id=R6TMlKwXQK-EvFlH2bl3KQqrC3_H57YZmJq8XzyrAsY&per_page=16&page=" +
+        "https://api.unsplash.com/photos/?client_id=R6TMlKwXQK-EvFlH2bl3KQqrC3_H57YZmJq8XzyrAsY&per_page=8&page=" +
           this.state.page
       )
       .then((res) =>
@@ -53,7 +53,85 @@ export default class LatestPhotos extends Component {
     });
   };
 
+  // onClick search button
+  searchTrigger = (e) => {
+    e.preventDefault();
+    axios
+      .get(
+        "https://api.unsplash.com/search/photos/?client_id=R6TMlKwXQK-EvFlH2bl3KQqrC3_H57YZmJq8XzyrAsY&query=" +
+          this.state.search_query +
+          "&per_page=8&page=" +
+          this.state.page
+      )
+      .then((res) =>
+        this.setState({
+          searching: true,
+          photos: res.data.results,
+          loading: false,
+          page: 2,
+          total_found: res.data.total,
+          total_found_pages: res.data.total_pages,
+        })
+      );
+  };
+
+  loadNextSearchPage = (e) => {
+    axios
+      .get(
+        "https://api.unsplash.com/search/photos/?client_id=R6TMlKwXQK-EvFlH2bl3KQqrC3_H57YZmJq8XzyrAsY&query=" +
+          this.state.search_query +
+          "&per_page=8&page=" +
+          this.state.page
+      )
+      .then((res) =>
+        this.setState({
+          photos: res.data.results,
+          loading: false,
+          page: this.state.page + 1,
+          searching: true,
+          total_found: res.data.total,
+          total_found_pages: res.data.total_pages,
+        })
+      );
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   render() {
+    var searchHeading = "";
+    var searchBtnMarkup = "";
+    var searchinfo = "";
+
+    if (this.state.searching === true) {
+      searchHeading = (
+        <h2>
+          You have searched with <i>{this.state.search_query}</i>
+        </h2>
+      );
+      searchBtnMarkup = (
+        <button className="btn btn-success" onClick={this.loadNextSearchPage}>
+          load Page {this.state.page}
+        </button>
+      );
+      searchinfo = (
+        <span>
+          Total found {this.state.total_found} | Page {this.state.page - 1} of{" "}
+          {this.state.total_found_pages}{" "}
+        </span>
+      );
+    } else {
+      searchHeading = <h2>Latest Photos</h2>;
+      searchBtnMarkup = (
+        <button className="btn btn-success" onClick={this.loadNextPage}>
+          load Page {this.state.page}
+        </button>
+      );
+      searchinfo = "";
+    }
+
     if (this.state.loading === true) {
       return (
         <div className="row text-center">
@@ -65,11 +143,11 @@ export default class LatestPhotos extends Component {
         <React.Fragment>
           <div className="row top-heading">
             <div className="col my-auto">
-              <h2>Latest Photos</h2>
+              {searchHeading} {searchinfo}
             </div>
 
             <div className="col col-auto my-auto">
-              <form action="">
+              <form action="" onSubmit={this.searchTrigger}>
                 <input
                   type="text"
                   value={this.state.search_query}
@@ -101,11 +179,7 @@ export default class LatestPhotos extends Component {
 
           <div className="row">
             <div className="col-lg-12 text-center">
-              <div className="load-more-btn">
-                <button className="btn btn-success" onClick={this.loadNextPage}>
-                  load Page {this.state.page}
-                </button>
-              </div>
+              <div className="load-more-btn">{searchBtnMarkup}</div>
             </div>
           </div>
         </React.Fragment>
