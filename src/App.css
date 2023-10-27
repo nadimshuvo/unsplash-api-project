@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Darker+Grotesque:300,400,500,600,700,800,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
 
 body {
-  font-family: 'Darker Grotesque', sans-serif;
+  font-family: "Cinzel", serif;
+}
+
+.footer-link:hover {
+  color: #aaa;
 }
 
 a.logo {
@@ -32,7 +36,7 @@ body {
   font-size: 18px;
 }
 
-.mainmenu li a:hover:after {
+.mainmenu li a:hover::after {
   position: absolute;
   left: 50%;
   bottom: 6px;
@@ -47,20 +51,16 @@ a:hover {
   text-decoration: none;
 }
 
-input[type=text] {
+input[type="text"] {
   border: 1px solid #ddd;
   padding: 5px 20px;
 }
 
-input[type=submit] {
+input[type="submit"] {
   background: #000;
   color: #fff;
   border: none;
   padding: 6px 25px;
-}
-
-header.header {
-  padding: 20px 0;
 }
 
 input:focus {
@@ -69,10 +69,6 @@ input:focus {
 
 img {
   max-width: 100%;
-}
-
-.content-block {
-  padding: 50px 0;
 }
 
 h2 {
@@ -89,7 +85,7 @@ h2 {
 }
 
 p.cat-name {
-  opacity: .5;
+  opacity: 0.5;
   font-size: 90%;
 }
 
@@ -133,4 +129,12 @@ p.cat-name {
 .single-photo-item {
   margin-bottom: 40px;
 }
-.top-heading {margin-bottom: 40px}
+.top-heading {
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+}

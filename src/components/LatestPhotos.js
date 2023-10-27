@@ -13,7 +13,7 @@ export default class LatestPhotos extends Component {
   componentDidMount() {
     axios
       .get(
-        "https://api.unsplash.com/photos/?client_id=R6TMlKwXQK-EvFlH2bl3KQqrC3_H57YZmJq8XzyrAsY&per_page=16&page=" +
+        "https://api.unsplash.com/photos/?client_id=R6TMlKwXQK-EvFlH2bl3KQqrC3_H57YZmJq8XzyrAsY&per_page=8&page=" +
           this.state.page
       )
       .then((res) =>
@@ -33,7 +33,7 @@ export default class LatestPhotos extends Component {
   loadNextPage = (e) => {
     axios
       .get(
-        "https://api.unsplash.com/photos/?client_id=R6TMlKwXQK-EvFlH2bl3KQqrC3_H57YZmJq8XzyrAsY&per_page=16&page=" +
+        "https://api.unsplash.com/photos/?client_id=R6TMlKwXQK-EvFlH2bl3KQqrC3_H57YZmJq8XzyrAsY&per_page=8&page=" +
           this.state.page
       )
       .then((res) =>
@@ -64,7 +64,7 @@ export default class LatestPhotos extends Component {
       .get(
         "https://api.unsplash.com/search/photos/?client_id=R6TMlKwXQK-EvFlH2bl3KQqrC3_H57YZmJq8XzyrAsY&query=" +
           this.state.search_query +
-          "&per_page=16&page=" +
+          "&per_page=8&page=" +
           this.state.page
       )
       .then((res) =>
@@ -88,7 +88,7 @@ export default class LatestPhotos extends Component {
       .get(
         "https://api.unsplash.com/search/photos/?client_id=R6TMlKwXQK-EvFlH2bl3KQqrC3_H57YZmJq8XzyrAsY&query=" +
           this.state.search_query +
-          "&per_page=16&page=" +
+          "&per_page=8&page=" +
           this.state.page
       )
       .then((res) =>
@@ -191,7 +191,7 @@ export default class LatestPhotos extends Component {
 
         <div className="row">
           <div className="col-lg-12 text-center">
-            <div className="load-more-btn">{searchBtnMarkup}</div>
+            <div className="load-more-btn mb-2">{searchBtnMarkup}</div>
           </div>
         </div>
       </React.Fragment>
