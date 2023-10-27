@@ -11,10 +11,7 @@ function App() {
         <div className="container">
           <div className="row">
             <div className="col">
-              <h2>Latest Photos</h2>
-              <div className="row">
-                <LatestPhotos />
-              </div>
+              <LatestPhotos />
             </div>
           </div>
         </div>
