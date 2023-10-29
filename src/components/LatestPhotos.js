@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
+import downloadIcon from "./download.svg";
 
 export default class LatestPhotos extends Component {
   state = {
@@ -175,7 +176,7 @@ export default class LatestPhotos extends Component {
           {this.state.photos.map((photo) => (
             <div key={photo.id} className="col-lg-3">
               <div className="single-photo-item">
-                <a className="d-block" href="/">
+                <a className="d-block" href={"photo?id=" + photo.id}>
                   <div className="photo-wrapper">
                     <img src={photo.urls.small} alt={photo.description} />
                   </div>
@@ -184,6 +185,17 @@ export default class LatestPhotos extends Component {
                     by - {photo.user.first_name} {photo.user.last_name}
                   </p>
                 </a>
+
+                <a
+                  className="dl-icon"
+                  rel="noopener noreferrer"
+                  title="Download"
+                  target="_blank"
+                  href={photo.links.download}
+                  download
+                >
+                  <img src={downloadIcon} alt="download" />
+                </a>
               </div>
             </div>
           ))}
@@ -191,7 +203,7 @@ export default class LatestPhotos extends Component {
 
         <div className="row">
           <div className="col-lg-12 text-center">
-            <div className="load-more-btn mb-2">{searchBtnMarkup}</div>
+            <div className="load-more-btn">{searchBtnMarkup}</div>
           </div>
         </div>
       </React.Fragment>

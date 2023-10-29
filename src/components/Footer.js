@@ -7,16 +7,16 @@ export default class Footer extends Component {
         <div className="container">
           <div className="row">
             <div className="col text-center">
-              <h2>Nadim's Photo showcase</h2>
-              <h3>
-                <a href="tel:+8801680761472">+880-1680-761472</a>
-              </h3>
+              <h2>Nadim Mahmud Shuvo (JavaScript Developer)</h2>
+              <a href="tel:+8801680761472" className="btn btn-primary btn-lg">
+                +880-1680-761472
+              </a>
               <div className="footer-menu">
                 <ul>
                   <li>
                     <a
                       href="https://www.facebook.com/nadimshuvo1997"
-                      className="footer-link"
+                      className="hover-overlay"
                     >
                       Facebook
                     </a>
@@ -24,32 +24,30 @@ export default class Footer extends Component {
                   <li>
                     <a
                       href="https://twitter.com/nadimshuvo1997"
-                      className="footer-link"
+                      className="hover-overlay"
                     >
-                      Twitter(X)
+                      Twitter
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://www.youtube.com/channel/UCbfZ5w9FQMDJ_AuvTmUKLDA"
-                      className="footer-link"
+                      href="https://github.com/nadimshuvo"
+                      className="hover-overlay"
                     >
-                      Youtube
+                      Github
                     </a>
                   </li>
                   <li>
                     <a
                       href="https://www.linkedin.com/in/nadimmahmudshuvo/"
-                      className="footer-link"
+                      className="hover-overlay"
                     >
                       Linkedin
                     </a>
                   </li>
                 </ul>
               </div>
-              <div className="copyright-text">
-                <b>&copy;2023 The71Agency</b>
-              </div>
+              <h5 className="copyright-text">@2023 The71Agency</h5>
             </div>
           </div>
         </div>

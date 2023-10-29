@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-export default class About extends Component {
+export default class Disclaimer extends Component {
   render() {
     return (
       <div>
-        <h2 className="text-center py-5">About us</h2>
+        <h2 className="text-center py-5">Disclaimer</h2>
         <p className="text-center py-3">
           This is Nadim Mahmud Shuvo. I have completed my B.Sc. and M.Sc. in
           Physics. In my college and also in University life, I loved to spend
@@ -13,7 +13,7 @@ export default class About extends Component {
         </p>
         <p className="text-center">
           When I completed my graduation, I decided that I would focus on
-          building my career in programming.
+          building my career in programming.{" "}
         </p>
       </div>
     );

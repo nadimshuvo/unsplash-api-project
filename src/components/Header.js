@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import myLogo from "./myLogo.png";
+import logo from "../myLogo.png";
 
 export default class Header extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class Header extends Component {
           <div className="row">
             <div className="col col-auto my-auto">
               <a href="/" className="logo">
-                <img src={myLogo} alt="logo" />
+                <img src={logo} alt="logo" />
               </a>
             </div>
             <div className="col my-auto text-right">
