@@ -16,16 +16,16 @@ export default class Header extends Component {
               <div className="mainmenu">
                 <ul>
                   <li>
-                    <a href="/unsplash-api-project/">Home</a>
+                    <a href="/">Home</a>
                   </li>
                   <li>
-                    <a href="/unsplash-api-project/about">About</a>
+                    <a href="/about">About</a>
                   </li>
                   <li>
-                    <a href="/unsplash-api-project/disclaimer">Disclaimer</a>
+                    <a href="/disclaimer">Disclaimer</a>
                   </li>
                   <li>
-                    <a href="/unsplash-api-project/credits">Credits</a>
+                    <a href="/credits">Credits</a>
                   </li>
                 </ul>
               </div>

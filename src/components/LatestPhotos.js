@@ -176,10 +176,7 @@ export default class LatestPhotos extends Component {
           {this.state.photos.map((photo) => (
             <div key={photo.id} className="col-lg-3">
               <div className="single-photo-item">
-                <a
-                  className="d-block"
-                  href={"/unsplash-api-project/photo?id=" + photo.id}
-                >
+                <a className="d-block" href={"/photo?id=" + photo.id}>
                   <div className="photo-wrapper">
                     <img src={photo.urls.small} alt={photo.description} />
                   </div>
