@@ -12,27 +12,27 @@ import Disclaimer from "./components/pages/Disclaimer";
 
 const router = createBrowserRouter([
   {
-    path: "/unsplash-api-project/",
+    path: "/",
     element: <LatestPhotos />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/unsplash-api-project/about",
+    path: "/about",
     element: <About />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/unsplash-api-project/disclaimer",
+    path: "/disclaimer",
     element: <Disclaimer />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/unsplash-api-project/credits",
+    path: "/credits",
     element: <Credits />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/unsplash-api-project/photo",
+    path: "/photo",
     element: <Photo />,
     errorElement: <ErrorPage />,
   },
