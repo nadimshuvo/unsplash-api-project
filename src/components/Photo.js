@@ -28,6 +28,7 @@ export default class Photo extends Component {
 
   render() {
     console.log(this.state.photo);
+    console.log("ok");
     var photo = this.state.photo;
     return (
       <div>
